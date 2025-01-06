@@ -22,9 +22,7 @@ impl MyRpcServer for MyRpcImpl {
         Ok("Hello from Rust + jsonrpsee!".to_string())
     }
 
-    async fn get_quote(&self) -> RpcResult<String> {
-        let report_data_bytes = [0u8; 64];
-
+    async fn get_quote(&self, report_data_bytes: &[u8; 64]) -> RpcResult<String> {
         let mut tdx_report_data = tdx_report_data_t { d: [0; 64usize] };
         tdx_report_data.d.copy_from_slice(&report_data_bytes);
 
