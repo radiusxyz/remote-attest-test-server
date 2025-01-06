@@ -9,4 +9,4 @@ tdx-attest-rs = { version = "0.1.2", git = "https://github.com/intel/SGXDataCent
 tokio = { version = "1.28.2", features = ["rt-multi-thread", "macros"] }
 jsonrpsee = { version = "0.24.7", features = ["macros", "server"] }
 jsonrpsee-types = "0.24.5"
-
+serde = "1.0.217"
