@@ -1,6 +1,6 @@
 ### In TD
 ```bash
-cd ~/remote-attest-test-server-go
+cd ~/remote-attest-test-server
 go build -o myserver server/main.go
 sudo ./myserver
 ```
