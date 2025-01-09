@@ -10,7 +10,7 @@ sudo ./myserver
 grpcurl -plaintext \
   -d '{"report_data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="}' \
   <td-ip>:<port> \
-  attest.Attest/Attest
+  attest.Attest/Attest
 
 # { "quote": ... }
 ```
