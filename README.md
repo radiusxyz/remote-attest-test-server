@@ -1,14 +1,17 @@
 ### In TD
 ```bash
-cargo run
+cd ~/remote-attest-test-server-go
+go build -o myserver server/main.go
+sudo ./myserver
 ```
 
 ### In Local
 ```bash
-curl -X POST \
-  -H "Content-Type: application/json" \
-  -d '{"jsonrpc":"2.0","method":"get_quote","params":[[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"id":1}' \
-  "http://<td-ip>:3000"
+grpcurl -plaintext \
+  -d '{"report_data": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="}' \
+  <td-ip>:<port> \
+  hello.Attest/Attest
 
-# {"jsonrpc":"2.0","id":1,"error":{"code":10,"message":"Failed to get quote"}}
+# { "quote": ... }
 ```
+
